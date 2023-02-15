@@ -1,0 +1,20 @@
+<div class="wrapper">
+    <p class="badWords"><b>Bad words:</b><span [innerHTML] = 'badWord'></span></p>
+    <div class="inputAddReset">
+   
+        <input type="text" [style.border] = "isBorder ? 'none' : '1px solid red'" [placeholder]='isAddWord ? "Please write a word" : "word here..."' [(ngModel)]="addWord">  
+        
+        <button class="add" (click)='add()'>Add</button>
+
+        <button class="reset" (click) = 'reset()'>Reset</button>
+    </div>
+
+    <textarea [(ngModel)]='checkBadWordsArea' [placeholder]='!isTextareaPlaceholder ? "Please write a word" : "Write here..."'
+    [style.border] = "!isTextareaBorder ? 'none' : '1px solid red'"
+    
+    ></textarea>
+
+    <button class="cenzor" (click) = 'cenzor()'>Cenzor</button>
+
+</div>
+
